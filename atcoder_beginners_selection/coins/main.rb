@@ -13,9 +13,8 @@ c = c_max if c > c_max
 result = 0
 (0..a).each do |aa|
   (0..b).each do |bb|
-    (0..c).each do |cc|
-      result += 1 if (500 * aa + 100 * bb + 50 * cc) == x
-    end
+    xx = (x - (500 * aa + 100 * bb))
+    result += 1 if (xx >= 0) && (xx / 50) <= c
   end
 end
 
