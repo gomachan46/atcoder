@@ -1,15 +1,4 @@
 _ = gets.chomp.to_i
-v = gets.chomp.split(' ').map(&:to_i).sort!.reverse!
+v = gets.chomp.split(' ').map(&:to_i).sort!
 
-def mix(a, b)
-  (a + b) / 2.0
-end
-def mixes(elements)
-  return elements.first if elements.size == 1
-  a = elements.pop
-  b = elements.pop
-  elements.push(mix(a, b))
-
-  mixes(elements)
-end
-puts mixes(v)
+puts v.inject { |sum, vi| (sum + vi) / 2.0 }
